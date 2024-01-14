@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware('auth:sanctum')->group(function () {
+    Route::prefix('create')->group(function () {
+        Route::post('/member', [MemberRepository::class, 'create']);
+        Route::post('/game', [GameRepository::class, 'create']);
+    });
+    Route::prefix('update')->group(function () {
+        Route::post('/member/{id}', [MemberRepository::class, 'update']);
+        Route::post('/game/{id}', [GameRepository::class, 'update']);
+    });
+    Route::prefix('delete')->group(function () {
+        Route::post('/member/{id}', [MemberRepository::class, 'delete']);
+        Route::post('/game/{id}', [GameRepository::class, 'delete']);
+    });
 });

@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     use HasFactory;
+
+    function games() {
+        return $this->belongsToMany(Game::class);
+    }
 }

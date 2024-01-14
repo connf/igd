@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('member_scores', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("game_id");
+            $table->integer('member_1_score')->nullable();
+            $table->integer('member_2_score')->nullable();
+            $table->integer('member_3_score')->nullable();
+            $table->integer('member_4_score')->nullable();
             $table->timestamps();
         });
     }
