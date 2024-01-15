@@ -19,19 +19,17 @@ class GameSeeder extends Seeder
             $game = \App\Models\Game::factory()->create($userIds);
 
             // for the game we just created get the id
-            $memberScores["game_id"] = $game->id;
+            $memberScores["game_id"] = $game->uuid;
 
             // then for each member id of the game
-            // replace _id with _score and set a random score
-            foreach($userIds as $k => $v) {
-                $memberScores[str_replace("_id", "_score", $k)] = rand(1,10000);
+            // get them a random score
+            foreach($userIds as $field => $memberId) {
+                $memberScores["member_id"] = $memberId;
+                $memberScores["member_score"] = rand(1,10000);
             }
-            
+
             // and save the scores too
             \App\Models\MemberScore::factory()->create($memberScores);
-
-            // and reset the $memberScores for the next record
-            $memberScores = [];
         }
     }
 
@@ -54,7 +52,8 @@ class GameSeeder extends Seeder
                 $memberId = \App\Models\Member::find(rand(1,30))->id;
 
                 // grab the ID and store that we've already got this user so we don't get it again
-                $fields["member_".$currentlySeedingUser."_id"] = $memberId;
+                $fields["member_id"] = $memberId;
+                $fields["player_position"] = $currentlySeedingUser;
                 $currentlySeededUsers[] = $memberId;
             }
         }

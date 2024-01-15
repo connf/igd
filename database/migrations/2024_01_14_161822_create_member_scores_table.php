@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('member_scores', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("game_id");
-            $table->integer('member_1_score')->nullable();
-            $table->integer('member_2_score')->nullable();
-            $table->integer('member_3_score')->nullable();
-            $table->integer('member_4_score')->nullable();
+            $table->string("game_id");
+            $table->foreignId("member_id");
+            $table->integer('member_score');
             $table->timestamps();
         });
     }
