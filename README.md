@@ -1,3 +1,9 @@
+## INSTRUCTIONS
+
+You will need your own .env which a copy of can be provided if required
+
+You MAY also need to `composer require BinaryCabin\LaravelUUID`
+
 ## About Laravel Scrabble IGD
 
 Laravel IGD is a Laravel Scrabble Membership Management System to log the members, scores and leaderboards of the members and the games they have played.
