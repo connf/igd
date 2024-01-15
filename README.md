@@ -2,7 +2,7 @@
 
 You will need your own .env which a copy of can be provided if required
 
-You MAY also need to `composer require BinaryCabin\LaravelUUID`
+You MAY also need to `composer require BinaryCabin\LaravelUUID` if not automatically installed with `composer install`
 
 ## About Laravel Scrabble IGD
 
@@ -27,7 +27,7 @@ In this latest development version the following features have been implemented:
 [x] Unit Test Templates
 [] Views
 [x] Example (non-usable) Routes
-[] Working Models
+[x] Working Models
 [] Working Controllers
 [] Working Repositorires
 [x] Working Seeders
