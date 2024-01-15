@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id(); // this will be the record ID
-            $table->uuid('uuid'); // this will be the UUID used as the game ID
+            $table->uuid('game_id'); // this will be the UUID used as the game ID
             $table->foreignId("member_id");
             $table->integer("player_position");
             $table->timestamps();

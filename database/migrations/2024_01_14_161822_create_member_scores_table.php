@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("game_id");
             $table->foreignId("member_id");
-            $table->integer('member_score');
+            $table->integer('score');
             $table->timestamps();
         });
     }

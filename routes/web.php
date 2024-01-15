@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
-    
+    $repo = new GameRepository;
+    return $repo->find("caf07df0-b3f8-11ee-9c56-332d7b9554c7")->scores;
 });
 
 Route::get('/members', [MemberRepository::class, 'listAllMembers']);

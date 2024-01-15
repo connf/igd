@@ -12,20 +12,20 @@ class GameSeeder extends Seeder
      */
     public function run(): void
     {
-        $games = 10;
+        $games = 50;
 
         for ($i = 1; $i <= $games; $i++) {
             $userIds = $this->createFakeRowOfData();
             $game = \App\Models\Game::factory()->create($userIds);
 
             // for the game we just created get the id
-            $memberScores["game_id"] = $game->uuid;
+            $memberScores["game_id"] = $game->game_id;
 
             // then for each member id of the game
             // get them a random score
             foreach($userIds as $field => $memberId) {
-                $memberScores["member_id"] = $memberId;
-                $memberScores["member_score"] = rand(1,10000);
+                $memberScores["member_id"] = $game->member_id;
+                $memberScores["score"] = rand(1,10000);
             }
 
             // and save the scores too
