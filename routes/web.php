@@ -17,16 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $repo = new GameRepository;
-    return $repo->find("caf07df0-b3f8-11ee-9c56-332d7b9554c7")->scores;
+    return view('/');
 });
 
 Route::get('/members', [MemberRepository::class, 'listAllMembers']);
 Route::get('/game/{guid}', [GameRepository::class, 'viewGame']);
 
 Route::prefix('member')->group(function () {
-    Route::get('/{guid}', [MemberRepository::class, 'viewMember']);
-    Route::get('/{guid}/edit', [MemberController::class, 'viewEditMemberPage']);
+    Route::get('/{id}', [MemberController::class, 'view']);
+    Route::get('/{id}/edit', [MemberController::class, 'viewEditMemberPage']);
 });
 
 // This allows for easy access to post AJAX updates using Vue rather than using the api route
