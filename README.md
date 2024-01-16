@@ -25,13 +25,13 @@ In this latest development version the following features have been implemented:
 - [x] Example Seeders
 - [x] Instructions on how to set up the system and use it on your own device
 - [x] Unit Test Templates
-- [] Views
+- [ ] Views
 - [x] Example (non-usable) Routes
 - [x] Working Models
-- [] Working Controllers
-- [] Working Repositorires
+- [ ] Working Controllers
+- [ ] Working Repositorires
 - [x] Working Seeders
-- [] Working Unit Tests
+- [ ] Working Unit Tests
 
 ## The Technical Test Information
 
