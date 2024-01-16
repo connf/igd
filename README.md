@@ -4,6 +4,8 @@ You will need your own .env which a copy of can be provided if required
 
 You MAY also need to `composer require BinaryCabin\LaravelUUID` if not automatically installed with `composer install` as HasUuids is implemented into this application. This was a feature in Laravel 8 (maybe earlier) but was removed after 9.30 and the latest (current for this repo) version of Laravel which is 10 no longer uses this trait built in. This has been done to re-add functionality used in a version of Laravel to the current version and to demonstrate the use of composer packages within a Laravel application
 
+If you are running the Vue version of the app you will also need to run `npm install` to ensure all Vue and NPM packages are available
+
 ## About Laravel Scrabble IGD
 
 Laravel IGD is a Laravel Scrabble Membership Management System to log the members, scores and leaderboards of the members and the games they have played.
