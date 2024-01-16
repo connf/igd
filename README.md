@@ -13,9 +13,6 @@ This is an example tool built to concept the idea request by IGD for a technical
 ## Setup Instructions
 
 - Clone the Repo
-- Execute `php artisan serve`
-- Navigate to the defined URL
-- Check the Route files to see what rules can be utilised
 
 In this latest development version the following features have been implemented:
 - [x] Models and Controllers Templates
