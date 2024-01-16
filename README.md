@@ -18,20 +18,20 @@ This is an example tool built to concept the idea request by IGD for a technical
 - Check the Route files to see what rules can be utilised
 
 In this latest development version the following features have been implemented:
-[x] Models and Controllers Templates
-[x] Test Templates
-[x] Repository Templates
-[x] Migrations
-[x] Example Seeders
-[x] Instructions on how to set up the system and use it on your own device
-[x] Unit Test Templates
-[] Views
-[x] Example (non-usable) Routes
-[x] Working Models
-[] Working Controllers
-[] Working Repositorires
-[x] Working Seeders
-[] Working Unit Tests
+ [x] Models and Controllers Templates
+ [x] Test Templates
+ [x] Repository Templates
+ [x] Migrations
+ [x] Example Seeders
+ [x] Instructions on how to set up the system and use it on your own device
+ [x] Unit Test Templates
+ [] Views
+ [x] Example (non-usable) Routes
+ [x] Working Models
+ [] Working Controllers
+ [] Working Repositorires
+ [x] Working Seeders
+ [] Working Unit Tests
 
 ## The Technical Test Information
 
