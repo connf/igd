@@ -1,7 +1,9 @@
 import './bootstrap';
-import '../css/app.css'; 
 
+import Vue from 'vue'
+import Welcome from './components/Welcome.vue';
 
-
-
-import Welcome from './vue/welcome.vue'
+new Vue({
+    el: '#app',
+    components: { Welcome }
+});
