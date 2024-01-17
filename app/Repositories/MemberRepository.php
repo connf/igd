@@ -9,6 +9,11 @@ use Carbon\Carbon;
 
 class MemberRepository
 {
+    public function create(array $data)
+    {
+        return Member::create($data);
+    }
+
     // integer or string can be used if we were to be searching for guids or uuids instead of numerical
     public function find(int|string $id): ?Member
     {
@@ -22,6 +27,16 @@ class MemberRepository
         // as an inbetween between the Task Code and Controller
 
         return $member;
+    }
+
+    /**
+     * Maybe we want a find by field type search which we can override
+     * This would let us pull records by email (as unique field) by default
+     * or override this to pull where all last names are "this last name"
+     */
+    public function findBy(string $search, string $by = "email")
+    {
+        return Member::where($by, $search)->get();
     }
 
     public function getJoinedDateForMember(int|Member $member): string
@@ -45,16 +60,16 @@ class MemberRepository
             $member = $this->find($member);
         }
 
-        $scores = $this->getScoresAsArray($member);
+        return $member->scores->pluck('score')->average();
+    }
 
-        // Shouldn't be needed for this game as all entries should contain a value
-        // but this is a safety net a good validation for user data entry forms for example
-        $scores = array_filter($member->scores->toArray());
-        
-        if(count($scores)) {
-            return array_sum($scores)/count($scores);
+    public function getMinimumScoreForMember(int|Member $member): string
+    {
+        if (is_int($member)) {
+            $member = $this->find($member);
         }
-        return 0;
+
+        return $member->scores->pluck('score')->min();
     }
 
     public function getMaximumScoreForMember(int|Member $member): string
@@ -63,16 +78,6 @@ class MemberRepository
             $member = $this->find($member);
         }
 
-        $scores = $this->getScoresAsArray($member);
-
-        return max($scores);
-    }
-
-    private function getScoresAsArray(Member $member)
-    {
-        foreach($member->scores as $k => $score) {
-            $scores[] = $score->score;
-        }
-        return $scores;
+        return $member->scores->pluck('score')->max();
     }
 }

@@ -10,6 +10,8 @@ class Member extends Model
 {
     use HasFactory;
 
+    public $guarded = [];
+
     function games() {
         return $this->hasMany(Game::class);
     }
