@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class MemberScore extends Model
 {
     use HasFactory;
+
+    function member() {
+        return $this->belongsTo(Member::class);
+    }
 }

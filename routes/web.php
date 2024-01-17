@@ -2,6 +2,7 @@
 
 use App\Repositories\GameRepository;
 use App\Repositories\MemberRepository;
+use App\Http\Controllers\LeaderboardController;
 use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('/');
 });
+
+Route::get('/leaderboard', [LeaderboardController::class, 'view']);
 
 Route::get('/members', [MemberRepository::class, 'listAllMembers']);
 Route::get('/game/{guid}', [GameRepository::class, 'viewGame']);

@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Controller\MemberController;
 use App\Controller\MemberScoreController;
 use App\Models\Member;
+use App\Models\MemberScore;
 use Carbon\Carbon;
 
 class MemberRepository
@@ -79,5 +80,10 @@ class MemberRepository
         }
 
         return $member->scores->pluck('score')->max();
+    }
+
+    public function getTopMembers($number = 10)
+    {
+        return MemberScore::all()->sortByDesc('score')->take($number);
     }
 }
