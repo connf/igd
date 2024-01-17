@@ -19,10 +19,13 @@ This is an example tool built to concept the idea request by IGD for a technical
 - Run `php artisan migrate`
 - Run `php artisan db:seed`
 
+I have inluded some tests for the MemberRepository I made
+- Tests can be ran with `.\vendor\bin\phpunit`
+
 Navigate to any of the following URLs to see them:
-/ - Laravel Welcome Page
-/leaderboard - Shows the top ten members' score's
-/member/{id} - To show the member information
+- `/` - Laravel Welcome Page
+- `/leaderboard` - Shows the top ten members' score's
+- `/member/{id}` - To show the member information
 
 In this latest development version the following features have been implemented:
 - [x] Models and Controllers Templates
