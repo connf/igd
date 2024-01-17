@@ -1,66 +1,73 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+## INSTRUCTIONS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+You will need your own .env which a copy of can be provided if required
 
-## About Laravel
+You MAY also need to `composer require BinaryCabin\LaravelUUID` if not automatically installed with `composer install` as HasUuids is implemented into this application. This was a feature in Laravel 8 (maybe earlier) but was removed after 9.30 and the latest (current for this repo) version of Laravel which is 10 no longer uses this trait built in. This has been done to re-add functionality used in a version of Laravel to the current version and to demonstrate the use of composer packages within a Laravel application
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## About Laravel Scrabble IGD
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Laravel IGD is a Laravel Scrabble Membership Management System to log the members, scores and leaderboards of the members and the games they have played.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This is an example tool built to concept the idea request by IGD for a technical demonstration.
 
-## Learning Laravel
+## Setup Instructions
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Clone the Repo
+- Add your `.env` or rename `.env.example` to `.env` and add your own variables
+- Run `composer install`
+- Run `npm install` **NOTE:** *ONLY* if you are using Vue (vue branches are separate and were purely to have a look a Vite vs Mix)
+- Run `php artisan migrate`
+- Run `php artisan db:seed`
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Navigate to any of the following URLs to see them:
+/ - Laravel Welcome Page
+/leaderboard - Shows the top ten members' score's
+/member/{id} - To show the member information
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+In this latest development version the following features have been implemented:
+- [x] Models and Controllers Templates
+- [x] Test Templates
+- [x] Repository Templates
+- [x] Migrations
+- [x] Example Seeders
+- [x] Instructions on how to set up the system and use it on your own device
+- [x] Unit Test Templates
+- [x] Views
+- [x] Example (non-usable) Routes
+- [x] Working Models
+- [x] Working Controllers
+- [x] Working Repositorires
+- [x] Working Seeders
+- [x] Working Unit Tests
 
-## Laravel Sponsors
+## The Technical Test Information
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+A scrabble club requires a system to store and update members’ details. They would like to see
+and update their members' contact details. They would also like to see the following on the
+member page:
 
-### Premium Partners
+- The date the member joined
+- The members average score
+- Highest score (when and which game)
+- Recent games
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+All recorded scrabble games are played between 2-4 players, the player with the highest score
+at the end of the game wins.
 
-## Contributing
+There should be a leaderboard page which shows the top 10 average member scores in order.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Coding Requirements
 
-## Code of Conduct
+This challenge is fairly open ended. Show us what you can do!
+- Eloquent relationships
+- Migrations
+- Validation
+- CRUD
+- Simple UI
+- Seeders / Factories
+- Regular git commits as you develop
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Feel free to add in extra features to show your understanding of PHP / Laravel. Please reach
+out to us if you need extra information on the challenge. Submit your challenge to a git
+repository for us to take a look. Make sure to make regular commits so that we can see your
+progress
