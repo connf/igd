@@ -13,6 +13,16 @@ This is an example tool built to concept the idea request by IGD for a technical
 ## Setup Instructions
 
 - Clone the Repo
+- Add your `.env` or rename `.env.example` to `.env` and add your own variables
+- Run `composer install`
+- Run `npm install` **NOTE:** *ONLY* if you are using Vue (vue branches are separate and were purely to have a look a Vite vs Mix)
+- Run `php artisan migrate`
+- Run `php artisan db:seed`
+
+Navigate to any of the following URLs to see them:
+/ - Laravel Welcome Page
+/leaderboard - Shows the top ten members' score's
+/member/{id} - To show the member information
 
 In this latest development version the following features have been implemented:
 - [x] Models and Controllers Templates
@@ -22,13 +32,13 @@ In this latest development version the following features have been implemented:
 - [x] Example Seeders
 - [x] Instructions on how to set up the system and use it on your own device
 - [x] Unit Test Templates
-- [ ] Views
+- [x] Views
 - [x] Example (non-usable) Routes
 - [x] Working Models
-- [ ] Working Controllers
-- [ ] Working Repositorires
+- [x] Working Controllers
+- [x] Working Repositorires
 - [x] Working Seeders
-- [ ] Working Unit Tests
+- [x] Working Unit Tests
 
 ## The Technical Test Information
 
